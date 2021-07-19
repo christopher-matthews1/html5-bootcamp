@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Plate | ChooseMyPlate</title>
+    <style>
+        fieldset {
+            font-size: 18px;
+        }
+        .hide {
+            display: none;
+        }
+
+        @media (max-width: 800px) {
+            .page-length800 {
+                display: initial;
+            }
+        }
+        @media (max-width: 600px) {
+            .page-length600 {
+                display: initial;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Account Registration</h1>
+
+    <fieldset>
+        <legend>Type of User</legend>
+        <label for="type-of-user">What type of user are you?</label>
+    <br class="hide page-length800">
+            <input type="radio" id="type-of-user1" name="type-of-user" value="Customer">
+            <label for="type-of-user1">Customer</label>
+            <br class="hide page-length600">
+            <input type="radio" id="type-of-user2" name="type-of-user" value="Employee/Contractor">
+            <label for="type-of-user2">Employee/Contractor</label>
+            <br class="hide page-length600">
+            <input type="radio" id="type-of-user3" name="type-of-user" value="Federal Employee/Contractor">
+            <label for="type-of-user3">Federal Employee/Contractor</label>
+    </fieldset>
+    <fieldset>
+        <legend>Email</legend>
+        <label for="email-personal">Personal Email Address</label>
+        <input type="email" id="email-personal">
+    <br class="hide page-length800">
+    <br class="hide page-length800">
+        <label for="email-business">Business Email Address</label>
+        <input type="email" id="email-business">
+    </fieldset>
+    <fieldset>
+        <legend>Password</legend>
+        <label for="password">Password</label>
+        <input type="password" id="password">
+    </fieldset>
+    <fieldset>
+        <legend>Use Case</legend>
+        <label for="use-case">I'm interested in: </label>
+        <select name="use-case" id="use-case">
+            <option value="personal">Personal</option>
+            <option value="business">Business</option>
+        </select>
+    </fieldset>
+    <fieldset>
+        <legend>Age Verification</legend>
+        <label for="age-verification">I am over 18 years of age.</label>
+        <input type="checkbox">
+    </fieldset>
+</body>
+</html>
