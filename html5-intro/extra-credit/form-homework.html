@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Homework</title>
+    <style>
+        #container {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        form {
+            border: 1px solid lightgrey;
+            border-radius: 20px;
+            width: 400px;
+            padding: 0 10px 20px 10px;
+        }
+        .centering-left {
+            width: 35%;
+            float: left;
+            text-align: right;
+        }
+
+        .input-box-width  {
+            width: 200px;
+            margin-left: 5px;
+            border: 1px solid silver;
+        }
+
+        fieldset  {
+            width: 182px;
+            float: right;
+            margin: 20px 47px;
+            border: 1.5px solid silver;
+        }
+
+        .card-type {
+            margin-left: 5px;
+            border: 1.5px solid silver;
+        }
+
+        #exp-date-info {
+            font-style: italic;
+        }
+
+        #validate-button {
+            margin: 0 auto;
+            display:block;
+            background-image: linear-gradient(white, lightgrey);
+            border: 1.5px solid silver;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <form action="">
+            <h1>Payment form</h1>
+            <p>Required fields are followed by *.</p>
+            <h2>Contact information</h2>
+            <fieldset>
+                <legend>Title</legend>
+                <input type="radio" id="title1" name="title" value="Mister">
+                <label for="title1">Mister</label><br>
+                <input type="radio" id="title2" name="title" value="Miss">
+                <label for="title2">Miss</label>
+            </fieldset><br>
+            <label class="centering-left" for="name">Name: *</label>
+            <input class="input-box-width" type="text" id="name" name="name"><br><br>
+            <label class="centering-left" for="email">Email: *</label>
+            <input class="input-box-width" type="email" id="email" name="email"><br><br>
+            <label class="centering-left" for="password">Password: *</label>
+            <input class="input-box-width" type="password" id="password" name="password">
+            <h2>Payment information</h2>
+            <label class="centering-left" for="card-type">Card Type:</label>
+            <select class="card-type" name="cars" id="cars">
+                <option value="visa">Visa</option>
+                <option value="mastercard">Mastercard</option>
+                <option value="amex">AMEX</option>
+            </select><br><br>
+            <label class="centering-left" for="card-number">Card number: *</label>
+            <input class="input-box-width" type="text" id="card-number" name="card-number"><br><br>
+            <label class="centering-left" for="exp-date">Expiration date: *</label>
+            <input class="input-box-width" type="text" id="exp-date" name="exp-date">
+            <label id="exp-date-info" class="centering-left" for="exp-date">formatted as mm/yy</label><br><br><br>
+            
+            <input id="validate-button" type="button" value="Validate the payment">
+        </form>
+    </div> 
+</body>
+</html>
