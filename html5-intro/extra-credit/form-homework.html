@@ -13,11 +13,12 @@
         }
 
         form {
-            border: 1px solid lightgrey;
+            border: 1px solid #ccc;
             border-radius: 20px;
             width: 400px;
             padding: 0 10px 20px 10px;
         }
+
         .centering-left {
             width: 35%;
             float: left;
@@ -27,19 +28,19 @@
         .input-box-width  {
             width: 50%;
             margin-left: 5px;
-            border: 1px solid silver;
+            border: 1px solid #aaa;
         }
 
         fieldset  {
             width: 45%;
             float: right;
             margin: 20px 48px;
-            border: 1.5px solid silver;
+            border: 1.5px solid #aaa;
         }
 
         .card-type {
             margin-left: 5px;
-            border: 1.5px solid silver;
+            border: 1.5px solid #aaa;
         }
 
         #exp-date-info {
@@ -49,22 +50,27 @@
         #validate-button {
             margin: 0 auto;
             display:block;
-            background-image: linear-gradient(white, lightgrey);
+            background-image: linear-gradient(white, #ccc);
             border: 1.5px solid silver;
         }
 
         #validate-button:active {
-            background-image: linear-gradient(white, rgb(240, 240, 240));
+            background-image: linear-gradient(white, #eee);
             border: 1.5px solid silver;
+        }
+
+        u {    
+            border-bottom: 2px dotted #000;
+            text-decoration: none;
         }
 
     </style>
 </head>
 <body>
-    <div id="container">
+    <main id="container">
         <form method="post" name="payment-form" id="payment-form">
             <h1>Payment form</h1>
-            <p>Required fields are followed by *.</p>
+            <p>Required fields are followed by <u>*</u>.</p>
             <h2>Contact information</h2>
             <fieldset>
                 <legend>Title</legend>
@@ -73,12 +79,12 @@
                 <input type="radio" id="title2" name="title" value="Miss">
                 <label for="title2">Miss</label>
             </fieldset><br>
-            <label class="centering-left" for="name">Name: *</label>
+            <label class="centering-left" for="name">Name: <u>*</u></label>
             <input class="input-box-width" type="text" id="name" name="name" required><br><br>
-            <label class="centering-left" for="email">Email: *</label>
-            <input class="input-box-width" type="email" id="email" name="email" required><br><br>
-            <label class="centering-left" for="password">Password: *</label>
-            <input class="input-box-width" type="password" id="password" name="password" required>
+            <label class="centering-left" for="email">Email: <u>*</u></label>
+            <input class="input-box-width" type="email" id="email" name="email" pattern=".*@.*\..*$" required><br><br>
+            <label class="centering-left" for="password">Password: <u>*</u></label>
+            <input class="input-box-width" type="password" id="password" name="password" minlength="6" required>
             <h2>Payment information</h2>
             <label class="centering-left" for="card-type">Card Type:</label>
             <select class="card-type" name="cars" id="cars">
@@ -86,14 +92,14 @@
                 <option value="mastercard">Mastercard</option>
                 <option value="amex">AMEX</option>
             </select><br><br>
-            <label class="centering-left" for="card-number">Card number: *</label>
-            <input class="input-box-width" type="number" id="card-number" name="card-number" required><br><br>
-            <label class="centering-left" for="exp-date">Expiration date: *</label>
+            <label class="centering-left" for="card-number">Card number: <u>*</u></label>
+            <input class="input-box-width" type="text" id="card-number" name="card-number" pattern="[0-9]{14,15}" required><br><br>
+            <label class="centering-left" for="exp-date">Expiration date: <u>*</u></label>
             <input class="input-box-width" type="text" id="exp-date" name="exp-date" pattern="^[0-1]\d\/[2-9]\d" required>
             <label id="exp-date-info" class="centering-left" for="exp-date">formatted as mm/yy</label><br><br><br>
             
             <input id="validate-button" type="submit" value="Validate the payment">
         </form>
-    </div> 
+    </main> 
 </body>
 </html>
