@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Homework</title>
     <style>
+
         #container {
-            width: 50%;
-            margin: 0 auto;
+            margin: 0px auto;
+            width:400px;
         }
 
         form {
@@ -24,15 +25,15 @@
         }
 
         .input-box-width  {
-            width: 200px;
+            width: 50%;
             margin-left: 5px;
             border: 1px solid silver;
         }
 
         fieldset  {
-            width: 182px;
+            width: 45%;
             float: right;
-            margin: 20px 47px;
+            margin: 20px 48px;
             border: 1.5px solid silver;
         }
 
@@ -52,11 +53,16 @@
             border: 1.5px solid silver;
         }
 
+        #validate-button:active {
+            background-image: linear-gradient(white, rgb(240, 240, 240));
+            border: 1.5px solid silver;
+        }
+
     </style>
 </head>
 <body>
     <div id="container">
-        <form action="">
+        <form method="post" name="payment-form" id="payment-form">
             <h1>Payment form</h1>
             <p>Required fields are followed by *.</p>
             <h2>Contact information</h2>
@@ -68,11 +74,11 @@
                 <label for="title2">Miss</label>
             </fieldset><br>
             <label class="centering-left" for="name">Name: *</label>
-            <input class="input-box-width" type="text" id="name" name="name"><br><br>
+            <input class="input-box-width" type="text" id="name" name="name" required><br><br>
             <label class="centering-left" for="email">Email: *</label>
-            <input class="input-box-width" type="email" id="email" name="email"><br><br>
+            <input class="input-box-width" type="email" id="email" name="email" required><br><br>
             <label class="centering-left" for="password">Password: *</label>
-            <input class="input-box-width" type="password" id="password" name="password">
+            <input class="input-box-width" type="password" id="password" name="password" required>
             <h2>Payment information</h2>
             <label class="centering-left" for="card-type">Card Type:</label>
             <select class="card-type" name="cars" id="cars">
@@ -81,12 +87,12 @@
                 <option value="amex">AMEX</option>
             </select><br><br>
             <label class="centering-left" for="card-number">Card number: *</label>
-            <input class="input-box-width" type="text" id="card-number" name="card-number"><br><br>
+            <input class="input-box-width" type="number" id="card-number" name="card-number" required><br><br>
             <label class="centering-left" for="exp-date">Expiration date: *</label>
-            <input class="input-box-width" type="text" id="exp-date" name="exp-date">
+            <input class="input-box-width" type="text" id="exp-date" name="exp-date" pattern="^[0-1]\d\/[2-9]\d" required>
             <label id="exp-date-info" class="centering-left" for="exp-date">formatted as mm/yy</label><br><br><br>
             
-            <input id="validate-button" type="button" value="Validate the payment">
+            <input id="validate-button" type="submit" value="Validate the payment">
         </form>
     </div> 
 </body>
